@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #clock {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock"></div>
+    <script>
+        function updateClock() {
+            const clock = document.getElementById("clock");
+            const now = new Date();
+            const date = now.toLocaleDateString();
+            const time = now.toLocaleTimeString();
+            clock.innerHTML = `${date} ${time}`;
+        }
+
+        // 初始加载页面时更新时钟
+        updateClock();
+
+        // 每隔一秒更新一次时钟
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
